@@ -1,0 +1,42 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ns-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#052e2e"/>
+      <stop offset="100%" stop-color="#0b0b2b"/>
+    </linearGradient>
+    <linearGradient id="ns-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#ns-bg)"/>
+  <rect x="95" y="96" width="1090" height="528" rx="34" fill="#020617" fill-opacity="0.58" stroke="#06b6d4" stroke-opacity="0.45"/>
+  <rect x="220" y="184" width="220" height="380" rx="30" fill="#000" fill-opacity="0.7" stroke="#06b6d4" stroke-width="3"/>
+  <rect x="238" y="214" width="184" height="320" rx="20" fill="#052e16" fill-opacity="0.7"/>
+  <rect x="258" y="236" width="144" height="14" rx="7" fill="#4ade80"/>
+  <rect x="258" y="262" width="144" height="14" rx="7" fill="#5eead4"/>
+  <rect x="258" y="288" width="144" height="14" rx="7" fill="#22d3ee"/>
+  <rect x="258" y="320" width="104" height="18" rx="9" fill="url(#ns-grad)"/>
+  <rect x="258" y="352" width="112" height="112" rx="16" fill="#0f172a" stroke="#2dd4bf" stroke-opacity="0.5"/>
+  <rect x="273" y="367" width="82" height="12" rx="6" fill="#86efac"/>
+  <rect x="273" y="387" width="82" height="12" rx="6" fill="#67e8f9"/>
+  <rect x="273" y="407" width="82" height="12" rx="6" fill="#818cf8"/>
+  <path d="M560 330H1010" stroke="#22d3ee" stroke-width="6"/>
+  <path d="M560 370H980" stroke="#5eead4" stroke-width="6"/>
+  <path d="M560 410H870" stroke="#a3e635" stroke-width="6"/>
+  <path d="M560 450L940 450" stroke="#f97316" stroke-width="6"/>
+  <g fill="none" stroke="#67e8f9" stroke-width="4">
+    <path d="M980 318L1028 338L1076 318L1124 338"/>
+    <path d="M980 358L1046 385L1112 358"/>
+    <path d="M980 398L1034 430L1078 398L1124 430"/>
+  </g>
+  <circle cx="980" cy="318" r="10" fill="#67e8f9"/>
+  <circle cx="1124" cy="338" r="10" fill="#67e8f9"/>
+  <circle cx="1046" cy="385" r="10" fill="#67e8f9"/>
+  <circle cx="1112" cy="358" r="10" fill="#67e8f9"/>
+  <circle cx="1034" cy="430" r="10" fill="#67e8f9"/>
+  <circle cx="1078" cy="398" r="10" fill="#67e8f9"/>
+  <circle cx="1124" cy="430" r="10" fill="#67e8f9"/>
+  <text x="560" y="645" fill="#d9e3ff" font-size="42" font-weight="600" font-family="Arial, Helvetica, sans-serif">NOTIFSENSE MOBILE APP</text>
+  <text x="560" y="687" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">On-device notification intelligence and action policy</text>
+</svg>

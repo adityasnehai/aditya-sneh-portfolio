@@ -1,0 +1,45 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#082f3f"/>
+    </linearGradient>
+    <linearGradient id="sf-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sf-bg)"/>
+  <rect x="90" y="86" width="1100" height="548" rx="30" fill="#020617" fill-opacity="0.55" stroke="#22d3ee" stroke-opacity="0.45"/>
+  <g opacity="0.9">
+    <circle cx="220" cy="225" r="12" fill="#34d399"/>
+    <circle cx="220" cy="225" r="42" fill="none" stroke="#34d399" stroke-opacity="0.5" stroke-width="4"/>
+    <circle cx="540" cy="225" r="12" fill="#f59e0b"/>
+    <circle cx="540" cy="225" r="42" fill="none" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="4"/>
+    <circle cx="860" cy="225" r="12" fill="#7c3aed"/>
+    <circle cx="860" cy="225" r="42" fill="none" stroke="#7c3aed" stroke-opacity="0.5" stroke-width="4"/>
+    <path d="M232 225H528" stroke="url(#sf-line)" stroke-width="4" stroke-dasharray="12 10"/>
+    <path d="M552 225H848" stroke="url(#sf-line)" stroke-width="4" stroke-dasharray="12 10"/>
+    <path d="M872 225H1110" stroke="url(#sf-line)" stroke-width="4" stroke-dasharray="12 10"/>
+  </g>
+  <polyline points="220 420,420 360,620 470,820 360,1020 470" fill="none" stroke="#38bdf8" stroke-width="5"/>
+  <polyline points="220 520,420 460,620 570,820 460,1020 570" fill="none" stroke="#a855f7" stroke-width="5"/>
+  <circle cx="220" cy="420" r="9" fill="#38bdf8"/>
+  <circle cx="420" cy="360" r="9" fill="#f59e0b"/>
+  <circle cx="620" cy="470" r="9" fill="#f472b6"/>
+  <circle cx="820" cy="360" r="9" fill="#34d399"/>
+  <circle cx="1020" cy="470" r="9" fill="#22d3ee"/>
+  <circle cx="220" cy="520" r="9" fill="#a78bfa"/>
+  <circle cx="420" cy="460" r="9" fill="#f97316"/>
+  <circle cx="620" cy="570" r="9" fill="#2dd4bf"/>
+  <circle cx="820" cy="460" r="9" fill="#facc15"/>
+  <circle cx="1020" cy="570" r="9" fill="#c084fc"/>
+  <rect x="236" y="300" width="240" height="80" rx="16" fill="#0f172a" stroke="#334155" stroke-opacity="0.7"/>
+  <text x="268" y="350" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">IMU Stream A</text>
+  <rect x="556" y="300" width="240" height="80" rx="16" fill="#0f172a" stroke="#334155" stroke-opacity="0.7"/>
+  <text x="584" y="350" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">Fusion Engine</text>
+  <rect x="876" y="300" width="224" height="80" rx="16" fill="#0f172a" stroke="#334155" stroke-opacity="0.7"/>
+  <text x="900" y="350" fill="#94a3b8" font-size="24" font-family="Arial, Helvetica, sans-serif">Reports</text>
+  <text x="90" y="645" fill="#d9e3ff" font-size="42" font-weight="600" font-family="Arial, Helvetica, sans-serif">SENSORFUSION AGENT</text>
+  <text x="90" y="685" fill="#94a3b8" font-size="25" font-family="Arial, Helvetica, sans-serif">IMU harmonization + confidence scoring</text>
+</svg>

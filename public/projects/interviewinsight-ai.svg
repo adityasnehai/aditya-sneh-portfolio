@@ -1,0 +1,30 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ii-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b115f"/>
+      <stop offset="100%" stop-color="#0d1f57"/>
+    </linearGradient>
+    <radialGradient id="ii-glow" cx="55%" cy="20%" r="45%">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#67e8f900" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#ii-bg)"/>
+  <rect x="0" y="0" width="1280" height="720" fill="url(#ii-glow)"/>
+  <rect x="72" y="92" width="1136" height="536" rx="28" fill="#05081b" fill-opacity="0.58" stroke="#7c3aed" stroke-opacity="0.45" stroke-width="2"/>
+  <circle cx="320" cy="220" r="82" fill="#0f172a" stroke="#67e8f9" stroke-width="3"/>
+  <path d="M282 210L298 250H326L332 270L360 228H378L330 316H314L298 276L282 316H266L232 230H248L282 210Z" fill="#a855f7"/>
+  <circle cx="340" cy="196" r="8" fill="#67e8f9"/>
+  <circle cx="368" cy="204" r="7" fill="#67e8f9"/>
+  <path d="M220 350H420C444 350 464 370 464 394V470C464 494 444 514 420 514H220V350Z" fill="#111827" stroke="#38bdf8" stroke-opacity="0.4"/>
+  <path d="M256 374H384C392 374 399 381 399 389V462C399 470 392 477 384 477H256C248 477 241 470 241 462V389C241 381 248 374 256 374Z" fill="#050a1f"/>
+  <rect x="258" y="386" width="122" height="11" rx="5" fill="#0ea5e9" fill-opacity="0.55"/>
+  <rect x="258" y="404" width="96" height="11" rx="5" fill="#a855f7" fill-opacity="0.5"/>
+  <rect x="258" y="422" width="109" height="11" rx="5" fill="#34d399" fill-opacity="0.45"/>
+  <rect x="258" y="440" width="86" height="11" rx="5" fill="#0ea5e9" fill-opacity="0.4"/>
+  <path d="M530 220L560 280L590 260L620 330L680 240L720 300H830C900 300 958 358 958 430C958 502 900 560 828 560H452V220H530Z" fill="#0f172a" fill-opacity="0.82"/>
+  <circle cx="680" cy="430" r="70" stroke="#67e8f9" stroke-width="10" fill="none"/>
+  <path d="M640 422L668 450L724 390" stroke="#67e8f9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="540" y="630" fill="#d9e3ff" font-size="42" font-weight="600" font-family="Arial, Helvetica, sans-serif">INTERVIEWINSIGHT-AI</text>
+  <text x="540" y="675" fill="#94a3b8" font-size="25" font-family="Arial, Helvetica, sans-serif">Multimodal interview prep platform</text>
+</svg>

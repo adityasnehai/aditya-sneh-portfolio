@@ -4,35 +4,38 @@ import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
+    <footer className="w-full px-6 pb-8 pt-6 text-gray-200">
+      <div className="mx-auto w-full max-w-6xl rounded-2xl border border-[rgba(112,66,248,0.25)] bg-[rgba(3,0,20,0.4)] p-5 md:p-7">
+        <div className="grid w-full gap-4 md:grid-cols-2 md:gap-6">
           {FOOTER_DATA.map((column) => (
-            <div
+            <section
               key={column.title}
-              className="min-w-[200px] h-auto flex flex-col items-center justify-start"
+              className="rounded-xl border border-[rgba(112,66,248,0.3)] bg-[rgba(3,0,20,0.5)] p-4 md:p-5"
             >
-              <h3 className="font-bold text-[16px]">{column.title}</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-300">
+                {column.title}
+              </h3>
               {column.data.map(({ icon: Icon, name, link }) => (
-                <Link
-                  key={`${column.title}-${name}`}
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="flex flex-row items-center my-[15px]"
-                >
-                  {Icon && <Icon />}
-                  <span className="text-[15px] ml-[6px]">{name}</span>
-                </Link>
+                <div key={`${column.title}-${name}`} className="mt-3">
+                  <Link
+                    href={link}
+                    target={link.startsWith("http") ? "_blank" : undefined}
+                    rel={link.startsWith("http") ? "noreferrer noopener" : undefined}
+                    className="inline-flex items-center gap-2 text-[15px] text-gray-200 transition hover:text-white"
+                  >
+                    {Icon && <Icon className="h-4 w-4 text-cyan-300" />}
+                    <span>{name}</span>
+                  </Link>
+                </div>
               ))}
-            </div>
+            </section>
           ))}
         </div>
 
-        <div className="mb-[20px] text-[15px] text-center">
-          &copy; John Doe {new Date().getFullYear()} Inc. All rights reserved.
+        <div className="mt-6 border-t border-white/10 pt-4 text-center text-sm text-gray-300">
+          &copy; Aditya Sneh {new Date().getFullYear()}. All rights reserved.
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
