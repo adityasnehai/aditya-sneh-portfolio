@@ -2,8 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-.cursive {
-  font-family: "Brush Script MT", "Trebuchet MS", "Segoe Script", cursive;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #f4efe6;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: rgba(17, 17, 17, 0.92);
+    color: #f8f5ef;
+  }
+}
+
+.serif-text {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
 }
 .Welcome-text {
   background: linear-gradient(
@@ -59,8 +87,4 @@
 }
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
-}
-
-html {
-  scroll-behavior: smooth;
 }

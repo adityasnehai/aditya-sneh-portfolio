@@ -1,104 +1,133 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 
-import { motion } from "framer-motion";
-import { FiExternalLink, FiFileText } from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 import { PUBLICATIONS } from "@/constants";
 
 export const Publications = () => {
-  const toneClasses = [
-    "from-cyan-300/90 to-purple-300/30",
-    "from-emerald-300/90 to-cyan-300/30",
-    "from-pink-300/90 to-purple-300/30",
-    "from-violet-300/90 to-cyan-300/30",
-    "from-blue-300/90 to-cyan-300/30",
-  ];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = PUBLICATIONS[activeIndex];
 
   return (
     <section
       id="publications"
-      className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-6 py-16 lg:py-20"
+      className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
     >
-      <div className="pointer-events-none absolute -left-16 top-12 h-72 w-72 rounded-full bg-purple-500/10 blur-[110px]" />
-      <div className="pointer-events-none absolute -right-12 bottom-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-[110px]" />
-
-      <div className="relative z-10 w-full max-w-6xl">
+      <div className="relative z-10 w-full max-w-[1440px]">
         <div className="mb-7 flex flex-col gap-3">
-          <h2 className="text-[36px] md:text-[44px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-cyan-300">
+          <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
             Publications
           </h2>
-          <p className="text-gray-400 max-w-3xl text-sm md:text-base">
+          <p className="max-w-2xl text-sm text-black/58 md:text-base">
             Research notes, pre-prints, and published contributions from recent work.
           </p>
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl rounded-[24px] border border-[#2A0E61] bg-[rgba(7,7,24,0.42)] p-4 md:p-5">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#030014] to-transparent" />
+      <div className="relative z-10 grid w-full max-w-[1440px] items-start gap-6 md:grid-cols-[1.1fr_1fr]">
+        <div>
+          <p className="mb-2 text-xs text-black/40">Hover or tap a title to preview</p>
+          <div className="overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.04)]">
+          {PUBLICATIONS.map((publication, index) => {
+            const isActive = index === activeIndex;
 
-        <div className="relative z-10">
-          <div className="grid gap-4 md:grid-cols-2">
-            {PUBLICATIONS.map((publication, index) => (
-              <motion.article
+            return (
+              <button
                 key={publication.title}
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                transition={{ duration: 0.35 }}
-                className="group relative rounded-2xl border border-white/10 bg-[rgba(3,0,20,0.45)] hover:border-cyan-400/60 hover:bg-[rgba(8,8,28,0.55)] transition-all overflow-hidden"
+                type="button"
+                onMouseEnter={() => setActiveIndex(index)}
+                onFocus={() => setActiveIndex(index)}
+                onClick={() => setActiveIndex(index)}
+                className={`group flex w-full items-start gap-4 border-b border-black/8 px-5 py-4 text-left transition last:border-b-0 md:px-6 md:py-5 ${
+                  isActive ? "bg-[#fbfaf7]" : "bg-transparent hover:bg-[#fbfaf7]/60"
+                }`}
               >
-                <Link
-                  href={publication.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="block p-4 md:p-5"
+                <span
+                  className={`mt-0.5 shrink-0 text-sm tabular-nums ${
+                    isActive ? "text-black/70" : "text-black/30"
+                  }`}
                 >
-                  <div className="relative flex flex-col">
-                    <div
-                      className={`mb-4 h-1.5 w-full rounded-full bg-gradient-to-r ${toneClasses[index % toneClasses.length]}`}
-                    />
-                    <div className="flex items-start justify-between gap-3">
-                      <span className="mt-0.5 h-7 w-7 shrink-0 rounded-full border border-cyan-300/50 bg-cyan-500/15 text-cyan-200 flex items-center justify-center">
-                        <FiFileText className="h-3.5 w-3.5" />
-                      </span>
-                      <h3 className="text-lg md:text-xl font-semibold text-white leading-tight">
-                        {publication.title}
-                      </h3>
-                      <span className="text-cyan-200/80 shrink-0">
-                        <FiExternalLink className="h-4 w-4 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      </span>
-                    </div>
-                    <p className="text-gray-300 mt-2 text-xs leading-relaxed">
-                      {publication.authors}
-                    </p>
-                    {publication.snippetImage ? (
-                      <div className="mt-3 overflow-hidden rounded-xl border border-white/10 bg-white p-2">
-                        <div className="flex h-[150px] items-start justify-center md:h-[165px]">
-                          <img
-                            src={publication.snippetImage}
-                            alt={`${publication.title} paper figure`}
-                            loading="lazy"
-                            className="block h-full w-full object-contain object-top"
-                          />
-                        </div>
-                      </div>
-                    ) : null}
-                    <p className="mt-3 text-sm leading-relaxed text-gray-200 max-h-28 overflow-hidden">
-                      {publication.abstract}
-                    </p>
-                    <div className="mt-4 inline-flex flex-wrap gap-2">
-                      <span className="px-3 py-1 rounded-full text-[11px] tracking-wide border border-cyan-400/50 text-cyan-200">
-                        {publication.venue}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </motion.article>
-            ))}
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <h3
+                    className={`text-base font-semibold leading-snug transition md:text-lg ${
+                      isActive ? "text-black" : "text-black/75"
+                    }`}
+                  >
+                    {publication.title}
+                  </h3>
+                  <p className="mt-1 text-xs text-black/45 md:text-sm">
+                    {publication.venue} &middot; {publication.authors}
+                  </p>
+                </div>
+
+                <FiArrowUpRight
+                  className={`mt-1 h-4 w-4 shrink-0 transition ${
+                    isActive
+                      ? "translate-x-0 opacity-100 text-black/60"
+                      : "-translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-60"
+                  }`}
+                />
+              </button>
+            );
+          })}
           </div>
+        </div>
+
+        <div className="min-h-[320px] overflow-hidden rounded-2xl border border-black/10 bg-[#fbfaf7] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.04)] md:sticky md:top-28 md:p-6">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.title}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+            >
+              <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-3 py-1 text-[11px] tracking-wide text-black/65">
+                {active.venue}
+              </span>
+
+              <h3 className="mt-4 text-xl font-semibold leading-tight text-black md:text-2xl">
+                {active.title}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-black/55 md:text-sm">
+                {active.authors}
+              </p>
+
+              {active.snippetImage ? (
+                <div className="mt-4 overflow-hidden rounded-xl border border-black/10 bg-white p-2">
+                  <div className="flex h-[140px] items-start justify-center md:h-[160px]">
+                    <img
+                      src={active.snippetImage}
+                      alt={`${active.title} paper figure`}
+                      loading="lazy"
+                      className="block h-full w-full object-contain object-top"
+                    />
+                  </div>
+                </div>
+              ) : null}
+
+              <p className="mt-4 text-sm leading-relaxed text-black/75">
+                {active.abstract}
+              </p>
+
+              <Link
+                href={active.link}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-black transition hover:gap-3"
+              >
+                Read paper
+                <FiArrowUpRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

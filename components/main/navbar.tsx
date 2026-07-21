@@ -1,6 +1,9 @@
 'use client';
+
 import { useState } from "react";
+
 import Link from "next/link";
+import { FiMenu, FiX } from "react-icons/fi";
 
 import { NAV_LINKS, SOCIALS } from "@/constants";
 
@@ -8,25 +11,27 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-4 md:px-8">
-      <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-end px-2 lg:grid lg:grid-cols-[1fr_auto_1fr]">
-        <div className="hidden lg:block" aria-hidden />
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-black/8 bg-[#f4efe6]/82 backdrop-blur-xl">
+      <div className="relative mx-auto flex w-full max-w-[1440px] items-center justify-end gap-4 px-4 py-4 md:px-8">
+        <Link href="#about-me" className="mr-auto text-base font-semibold text-black md:text-lg">
+          Aditya Sneh
+        </Link>
 
-        <div className="hidden h-full flex-row items-center justify-self-center lg:flex">
-          <div className="flex items-center gap-5 h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] px-[20px] py-[10px] rounded-full text-gray-200">
+        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center md:flex">
+          <div className="flex items-center gap-1 rounded-full border border-black/10 bg-white/75 px-2 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-cyan-300 transition"
+                className="rounded-full px-5 py-2.5 text-base font-semibold text-black/72 transition hover:bg-black hover:text-white"
               >
                 {link.title}
               </Link>
             ))}
           </div>
-        </div>
+        </nav>
 
-        <div className="hidden flex-row justify-self-end gap-5 lg:flex">
+        <div className="hidden items-center justify-end gap-3 md:flex">
           {SOCIALS.map(({ link, name, icon: Icon }) => (
             <Link
               href={link}
@@ -35,54 +40,73 @@ export const Navbar = () => {
               key={name}
               aria-label={name}
               title={name}
+              className="rounded-full border border-black/10 bg-white/75 p-3 text-black/72 transition hover:-translate-y-0.5 hover:border-black/20 hover:bg-white hover:text-black"
             >
-              <Icon className="h-6 w-6 text-white hover:text-cyan-300 transition" />
+              <Icon className="h-5 w-5" />
             </Link>
           ))}
+
+          <Link
+            href="/Aditya_Sneh_Resume.pdf"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="rounded-full border border-black bg-black px-5 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
+          >
+            Resume
+          </Link>
         </div>
 
         <button
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded={isMobileMenuOpen}
-          className="text-4xl text-white focus:outline-none lg:hidden"
+          className="ml-auto inline-flex items-center justify-center rounded-full border border-black/10 bg-white/80 p-3 text-black shadow-sm md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          ☰
+          {isMobileMenuOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
         </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 lg:hidden">
-          <div className="flex flex-col items-center gap-4">
+        <div className="border-t border-black/10 bg-[#f4efe6]/98 px-4 py-4 backdrop-blur-xl md:hidden">
+          <div className="mx-auto flex max-w-[1440px] flex-col gap-2 rounded-3xl border border-black/10 bg-white/75 p-3 shadow-[0_12px_32px_rgba(0,0,0,0.05)]">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-cyan-300 transition text-center"
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-black/72 transition hover:bg-black hover:text-white"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
               </Link>
             ))}
-          </div>
 
-          <div className="flex justify-center gap-6 mt-6">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
+            <div className="mt-1 flex flex-wrap gap-2 px-1 pb-1">
+              {SOCIALS.map(({ link, name, icon: Icon }) => (
+                <Link
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  key={name}
+                  aria-label={name}
+                  title={name}
+                  className="rounded-full border border-black/10 bg-white/80 p-3 text-black/70"
+                >
+                  <Icon className="h-5 w-5" />
+                </Link>
+              ))}
               <Link
-                href={link}
+                href="/Aditya_Sneh_Resume.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
-                key={name}
-                aria-label={name}
-                title={name}
+                className="rounded-full border border-black bg-black px-5 py-3 text-base font-semibold text-white"
               >
-                <Icon className="h-8 w-8 text-white hover:text-cyan-300 transition" />
+                Resume
               </Link>
-            ))}
+            </div>
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 };
