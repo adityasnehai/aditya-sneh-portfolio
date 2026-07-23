@@ -5,7 +5,7 @@ import { FOOTER_DATA } from "@/constants";
 export const Footer = () => {
   return (
     <footer className="w-full px-4 pb-10 pt-6 text-black md:px-8 lg:px-12">
-      <div className="mx-auto w-full max-w-[1440px] rounded-[28px] border border-black/10 bg-white/65 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.04)] md:p-7">
+      <div className="mx-auto w-full max-w-[1160px] rounded-[28px] border border-black/10 bg-white/65 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.04)] md:p-7">
         <div className="grid w-full gap-4 md:grid-cols-2 md:gap-6">
           {FOOTER_DATA.map((column) => (
             <section

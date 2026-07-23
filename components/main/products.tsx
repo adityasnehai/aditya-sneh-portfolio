@@ -12,7 +12,7 @@ export const Products = () => {
       id="products"
       className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
     >
-      <div className="relative z-10 w-full max-w-[1440px]">
+      <div className="relative z-10 w-full max-w-[1160px]">
         <div className="mb-7 flex flex-col gap-3">
           <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
             Products I&apos;ve Shipped
@@ -23,7 +23,7 @@ export const Products = () => {
         </div>
       </div>
 
-      <div className="relative z-10 grid w-full max-w-[1440px] gap-5 md:grid-cols-2">
+      <div className="relative z-10 grid w-full max-w-[1160px] gap-5 md:grid-cols-2">
         {PRODUCTS.map((product, index) => (
           <motion.div
             key={product.title}

@@ -8,7 +8,7 @@ export const Hero = () => {
       id="about-me"
       className="flex min-h-screen scroll-mt-24 items-center px-4 pb-10 pt-24 md:px-8 md:pt-28 lg:px-12"
     >
-      <div className="mx-auto grid w-full max-w-[1440px] gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+      <div className="mx-auto grid w-full max-w-[1160px] gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
         <div className="max-w-3xl">
           <p className="text-sm uppercase tracking-[0.22em] text-black/48 md:text-base">
             AI Engineer &middot; AI Researcher

@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-black/8 bg-[#f4efe6]/82 backdrop-blur-xl">
-      <div className="relative mx-auto flex w-full max-w-[1440px] items-center justify-end gap-4 px-4 py-4 md:px-8">
+      <div className="relative mx-auto flex w-full max-w-[1160px] items-center justify-end gap-4 px-4 py-4 md:px-8">
         <Link href="#about-me" className="mr-auto text-base font-semibold text-black md:text-lg">
           Aditya Sneh
         </Link>
@@ -69,7 +69,7 @@ export const Navbar = () => {
 
       {isMobileMenuOpen && (
         <div className="border-t border-black/10 bg-[#f4efe6]/98 px-4 py-4 backdrop-blur-xl md:hidden">
-          <div className="mx-auto flex max-w-[1440px] flex-col gap-2 rounded-3xl border border-black/10 bg-white/75 p-3 shadow-[0_12px_32px_rgba(0,0,0,0.05)]">
+          <div className="mx-auto flex max-w-[1160px] flex-col gap-2 rounded-3xl border border-black/10 bg-white/75 p-3 shadow-[0_12px_32px_rgba(0,0,0,0.05)]">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}

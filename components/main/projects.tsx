@@ -11,7 +11,7 @@ export const Projects = () => {
       id="projects"
       className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
     >
-      <div className="relative z-10 w-full max-w-[1440px]">
+      <div className="relative z-10 w-full max-w-[1160px]">
         <div className="mb-6 flex flex-col gap-3">
           <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
             Projects
@@ -22,7 +22,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      <div className="relative z-10 overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.04)] w-full max-w-[1440px]">
+      <div className="relative z-10 overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.04)] w-full max-w-[1160px]">
         {PROJECTS.map((project, index) => (
           <Link
             key={project.title}

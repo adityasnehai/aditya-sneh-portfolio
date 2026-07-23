@@ -17,7 +17,7 @@ export const Publications = () => {
       id="publications"
       className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
     >
-      <div className="relative z-10 w-full max-w-[1440px]">
+      <div className="relative z-10 w-full max-w-[1160px]">
         <div className="mb-7 flex flex-col gap-3">
           <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
             Publications
@@ -28,7 +28,7 @@ export const Publications = () => {
         </div>
       </div>
 
-      <div className="relative z-10 grid w-full max-w-[1440px] items-start gap-6 md:grid-cols-[1.1fr_1fr]">
+      <div className="relative z-10 grid w-full max-w-[1160px] items-start gap-6 md:grid-cols-[1.1fr_1fr]">
         <div>
           <p className="mb-2 text-xs text-black/40">Hover or tap a title to preview</p>
           <div className="overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.04)]">
