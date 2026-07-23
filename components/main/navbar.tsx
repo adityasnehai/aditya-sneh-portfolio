@@ -5,7 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 
-import { NAV_LINKS, SOCIALS } from "@/constants";
+import { NAV_LINKS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,31 +31,6 @@ export const Navbar = () => {
           </div>
         </nav>
 
-        <div className="hidden items-center justify-end gap-3 md:flex">
-          {SOCIALS.map(({ link, name, icon: Icon }) => (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={name}
-              aria-label={name}
-              title={name}
-              className="rounded-full border border-black/10 bg-white/75 p-3 text-black/72 transition hover:-translate-y-0.5 hover:border-black/20 hover:bg-white hover:text-black"
-            >
-              <Icon className="h-5 w-5" />
-            </Link>
-          ))}
-
-          <Link
-            href="/Aditya_Sneh_Resume.pdf"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded-full border border-black bg-black px-5 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
-          >
-            Resume
-          </Link>
-        </div>
-
         <button
           type="button"
           aria-label="Toggle navigation menu"
@@ -80,30 +55,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-
-            <div className="mt-1 flex flex-wrap gap-2 px-1 pb-1">
-              {SOCIALS.map(({ link, name, icon: Icon }) => (
-                <Link
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  key={name}
-                  aria-label={name}
-                  title={name}
-                  className="rounded-full border border-black/10 bg-white/80 p-3 text-black/70"
-                >
-                  <Icon className="h-5 w-5" />
-                </Link>
-              ))}
-              <Link
-                href="/Aditya_Sneh_Resume.pdf"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="rounded-full border border-black bg-black px-5 py-3 text-base font-semibold text-white"
-              >
-                Resume
-              </Link>
-            </div>
           </div>
         </div>
       )}
