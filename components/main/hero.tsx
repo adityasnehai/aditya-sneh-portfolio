@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <section
       id="about-me"
-      className="flex min-h-screen scroll-mt-24 items-center px-4 pb-10 pt-24 md:px-8 md:pt-28 lg:px-12"
+      className="flex min-h-screen scroll-mt-28 items-center px-4 pb-10 pt-32 md:px-8 md:pt-36 lg:px-12"
     >
       <div className="mx-auto grid w-full max-w-[1160px] gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
         <div className="max-w-3xl">

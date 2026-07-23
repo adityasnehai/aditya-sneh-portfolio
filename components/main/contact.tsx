@@ -83,7 +83,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative flex scroll-mt-24 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
+      className="relative flex scroll-mt-28 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
     >
       <div className="relative z-10 w-full max-w-2xl">
         <div className="mb-7 flex flex-col gap-3">

@@ -12,8 +12,8 @@ export const Navbar = () => {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-black/8 bg-[#f4efe6]/82 backdrop-blur-xl">
-      <div className="relative mx-auto flex w-full max-w-[1160px] items-center justify-end gap-4 px-4 py-4 md:px-8">
-        <Link href="#about-me" className="mr-auto text-base font-semibold text-black md:text-lg">
+      <div className="relative mx-auto flex w-full max-w-[1160px] items-center justify-end gap-4 px-4 py-5 md:px-8">
+        <Link href="#about-me" className="mr-auto text-lg font-semibold text-black md:text-xl">
           Aditya Sneh
         </Link>
 
