@@ -53,10 +53,12 @@ space-portfolio/
     |-- layout.tsx
     |-- opengraph-image.tsx
     |-- page.tsx
+    |-- polish.css
     |-- robots.ts
     |-- sitemap.ts
   |- components/
     |-- main/
+    |-- ui/
   |- config/
     |-- index.ts
   |- constants/
@@ -67,6 +69,7 @@ space-portfolio/
   |- public/
   |- .eslintrc.json
   |- .gitignore
+  |- components.json
   |- eslint.config.mjs
   |- netlify.toml
   |- next.config.js
@@ -117,22 +120,33 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Space Portfolio.
 
 <!--- DEPENDENCIES_START --->
+- [@base-ui/react](https://www.npmjs.com/package/@base-ui/react): ^1.8.0
 - [@heroicons/react](https://www.npmjs.com/package/@heroicons/react): ^2.2.0
+- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.7.9
+- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.8.1
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.2.14
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.27
+- [class-variance-authority](https://www.npmjs.com/package/class-variance-authority): ^0.7.1
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
-- [eslint](https://www.npmjs.com/package/eslint): ^10.0.2
-- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.1.6
+- [cn](https://www.npmjs.com/package/cn): ^0.4.0
+- [eslint](https://www.npmjs.com/package/eslint): ^9.39.5
+- [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): ^16.3.6
 - [framer-motion](https://www.npmjs.com/package/framer-motion): ^12.35.0
-- [next](https://www.npmjs.com/package/next): 16.1.6
+- [lenis](https://www.npmjs.com/package/lenis): ^1.3.26
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.48.0
+- [motion](https://www.npmjs.com/package/motion): ^13.4.4
+- [next](https://www.npmjs.com/package/next): ^16.3.6
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [react](https://www.npmjs.com/package/react): 19.2.4
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.4
 - [react-icons](https://www.npmjs.com/package/react-icons): ^5.6.0
+- [shadcn](https://www.npmjs.com/package/shadcn): ^4.21.0
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^3.5.0
 - [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.0
+- [three](https://www.npmjs.com/package/three): ^0.186.1
+- [tw-animate-css](https://www.npmjs.com/package/tw-animate-css): ^1.4.0
 - [typescript](https://www.npmjs.com/package/typescript): ^5
 
 <!--- DEPENDENCIES_END --->
