@@ -43,48 +43,47 @@ export const SOCIALS = [
 
 export const SKILL_GROUPS = [
   {
-    title: "Programming",
-    items: ["Python", "SQL"],
+    title: "Languages",
+    items: ["Python", "SQL", "TypeScript"],
   },
   {
     title: "Machine Learning & Deep Learning",
     items: [
       "PyTorch",
-      "Transformer Architectures",
       "scikit-learn",
-      "NLP",
+      "TensorFlow",
+      "Hugging Face Transformers",
       "Computer Vision",
-      "Multimodal Learning"
+      "Multimodal Learning",
     ],
   },
   {
     title: "LLM & Generative AI",
     items: [
       "LLMs",
-      "Fine-Tuning",
-      "LoRA / PEFT",
       "RAG",
+      "Prompt Engineering",
+      "LLM Fine-Tuning",
+      "LoRA / PEFT",
       "OpenAI API",
       "LangChain",
-      "LlamaIndex",
-      "FAISS",
-      "Pinecone",
-      "Chroma",
-      "Prompt Engineering",
-      "Agentic Systems"
+      "LangGraph",
+      "Agentic AI",
+      "Multi-Agent Systems",
+      "Model Evaluation",
     ],
   },
   {
-    title: "Version Control",
-    items: ["Git", "GitHub"],
+    title: "Data & Databases",
+    items: ["Pandas", "NumPy", "PostgreSQL", "FAISS", "Pinecone", "Chroma"],
   },
   {
-    title: "Backend & Data",
-    items: ["FastAPI", "REST APIs", "Pandas", "NumPy", "MySQL"],
+    title: "Application Development",
+    items: ["FastAPI", "React", "Next.js"],
   },
   {
     title: "Cloud & MLOps",
-    items: ["AWS", "GCP", "Docker", "CI/CD", "MLflow"],
+    items: ["AWS", "GCP", "Docker", "MLflow", "GitHub Actions", "Git", "CI/CD", "Monitoring & Observability"],
   },
 ] as const;
 
@@ -151,7 +150,7 @@ export const PUBLICATIONS: readonly Publication[] = [
   {
     title: "DySTAN: Joint Modeling of Sedentary Activity and Social Context from Smartphone Sensors",
     authors: "Aditya Sneh, N. Sahu, H. Lone",
-    venue: "arXiv 2025 (Under Review)",
+    venue: "arXiv 2026",
     link: "https://arxiv.org/abs/2512.02025",
     snippetImage: "/publications/dystan-paper.png",
     abstract:
@@ -161,7 +160,7 @@ export const PUBLICATIONS: readonly Publication[] = [
     title:
       "Fairness-Aware Few-Shot Learning for Audio-Visual Stress Detection",
     authors: "A. Shelke, Aditya Sneh, A. Adyasha, H. Lone",
-    venue: "arXiv 2025 (Under Review)",
+    venue: "TAFFC 2026",
     link: "https://arxiv.org/abs/2511.09039",
     snippetImage: "/publications/fairness-paper.png",
     abstract:
@@ -171,37 +170,44 @@ export const PUBLICATIONS: readonly Publication[] = [
     title:
       "Real-World Receptivity to Adaptive Mental Health Interventions: Findings from an In-the-Wild Study",
     authors: "N. Sahu, Aditya Sneh, H. Lone",
-    venue: "arXiv 2025 (Under Review)",
+    venue: "arXiv 2026",
     link: "https://arxiv.org/abs/2508.02817",
     snippetImage: "/publications/realworld-paper.png",
     abstract:
       "An in-the-wild study of intervention acceptance patterns, focusing on adaptive messaging strategies and contextual responsiveness in real user routines.",
+  },
+  {
+    title: "When Should I Poke You? Predicting Opportune Moments for Mobile Interventions Using Passive Sensing",
+    authors: "Aditya Sneh et al.",
+    venue: "UbiComp 2026",
+    link: "#publications",
+    abstract: "A passive-sensing study focused on predicting opportune moments for context-aware mobile interventions.",
   },
 ] as const;
 
 export const PRODUCTS: readonly Product[] = [
   {
     title: "BloomPilot",
-    tagline: "Agentic AI for your plant care.",
-    image: "/products/bloompilot.png",
+    tagline: "Plant care, with a clear next step.",
+    image: "/products/bloompilot-v2.png",
     link: "https://bloompilot.vercel.app/",
   },
   {
     title: "MemoStack",
-    tagline: "Multimodal RAG, searchable memory for every team decision.",
-    image: "/products/memostack.png",
+    tagline: "Search team documents. Get answers with sources you can check.",
+    image: "/products/memostack-v2.png",
     link: "https://edms-rag.vercel.app/",
   },
   {
     title: "MindPulse",
-    tagline: "On-device LLM fine-tuning, quantization, and safety guardrails.",
-    image: "/products/mindpulse.png",
+    tagline: "Notice changes in daily routines and take one small next step.",
+    image: "/products/mindpulse-v2.png",
     link: "https://mindpulse-landing-psi.vercel.app/",
   },
   {
     title: "FinMem",
-    tagline: "Episodic memory for market research.",
-    image: "/products/finmem.png",
+    tagline: "Find historical market parallels and explore what happened next.",
+    image: "/products/finmem-v2.png",
     link: "https://finmem.vercel.app/",
   },
 ] as const;
@@ -326,24 +332,20 @@ export const FOOTER_DATA = [
 
 export const NAV_LINKS = [
   {
-    title: "About",
-    link: "#about-me",
-  },
-  {
-    title: "Products",
+    title: "Work",
     link: "#products",
   },
   {
-    title: "Publications",
+    title: "Research",
     link: "#publications",
-  },
-  {
-    title: "Projects",
-    link: "#projects",
   },
   {
     title: "Experience",
     link: "#experience",
+  },
+  {
+    title: "Projects",
+    link: "#projects",
   },
   {
     title: "Skills",

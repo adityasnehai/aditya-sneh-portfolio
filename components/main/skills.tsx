@@ -11,59 +11,41 @@ import {
 import { SKILL_GROUPS } from "@/constants";
 
 const GROUP_ICONS: Record<string, IconType> = {
-  Programming: FiCode,
+  Languages: FiCode,
   "Machine Learning & Deep Learning": FiCpu,
   "LLM & Generative AI": FiLayers,
-  "Backend & Data": FiServer,
+  "Data & Databases": FiServer,
+  "Application Development": FiCode,
   "Cloud & MLOps": FiCloud,
-  "Version Control": FiGitBranch,
 };
 
 export const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="relative flex scroll-mt-28 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
-    >
-      <div className="relative z-10 w-full max-w-[1160px]">
-        <div className="mb-7 flex flex-col gap-3">
-          <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
-            Tech Stack
-          </h2>
-          <p className="max-w-2xl text-sm text-black/58 md:text-base">
-            Tools and frameworks used across research and production systems.
-          </p>
-        </div>
-      </div>
-
-      <div className="relative z-10 w-full max-w-[1160px]">
+    <section id="skills" className="stack-section neo-grid">
+      <div className="stack-inner">
+        <header className="stack-heading">
+          <span className="stack-eyebrow">THE TOOLS BEHIND THE WORK</span>
+          <h2>Tech Stack</h2>
+          <p>Tools I use to research, build, and ship.</p>
+        </header>
+        <div className="stack-layout">
         {SKILL_GROUPS.map((group) => {
           const Icon = GROUP_ICONS[group.title] ?? FiLayers;
-          const sortedItems = [...group.items].sort((a, b) => a.localeCompare(b));
 
           return (
-            <div
+            <article
               key={group.title}
-              className="flex flex-col gap-3 border-b border-black/8 py-4 last:border-b-0 md:flex-row md:items-center md:gap-6 md:py-5"
+              className="stack-card"
             >
-              <h3 className="flex shrink-0 items-center gap-2 text-sm font-semibold text-black md:w-56">
-                <Icon className="h-4 w-4 text-black/60" />
-                {group.title}
-              </h3>
-
-              <div className="flex flex-wrap gap-2">
-                {sortedItems.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-black/10 bg-[#fbfaf7] px-3 py-1 text-sm text-black/68"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div className="stack-card-heading"><span className="stack-card-icon"><Icon /></span><h3>{group.title}</h3></div>
+              <div className="stack-chips">
+                {[...group.items].sort((a, b) => a.localeCompare(b)).map((skill) => <span key={skill}>{skill}</span>)}
               </div>
-            </div>
+            </article>
           );
         })}
+        </div>
+        <div className="stack-footer"><span>RESEARCH</span><b>→</b><span>BUILD</span><b>→</b><span>DEPLOY</span><b>→</b><span>IMPACT</span></div>
       </div>
     </section>
   );

@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://aditya-sneh-portfolio.vercel.app";
 const SITE_TITLE = "Aditya Sneh";
 const SITE_DESCRIPTION =
-  "AI/ML Engineer portfolio featuring production-grade LLM, RAG, and real-time mobile context modeling systems.";
+  "Applied AI engineer building AI agents, RAG systems, and sensor-based ML. Explore Aditya Sneh’s products, research, engineering experience, and resume.";
 
 export const siteConfig: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: `%s | ${SITE_TITLE}`,
+    template: `%s`,
   },
   description: SITE_DESCRIPTION,
   keywords: [

@@ -1,60 +1,47 @@
-"use client";
-
-import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
-
+import type { CSSProperties } from "react";
+import { FiArrowRight, FiBarChart2, FiCode, FiExternalLink, FiGitBranch, FiGithub, FiMessageSquare, FiRadio, FiSmartphone } from "react-icons/fi";
 import { PROJECTS } from "@/constants";
 
-export const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="relative flex scroll-mt-28 flex-col items-center justify-center overflow-hidden px-4 py-14 md:px-8 lg:px-12 lg:py-18"
-    >
-      <div className="relative z-10 w-full max-w-[1160px]">
-        <div className="mb-7 flex flex-col gap-3">
-          <h2 className="text-[34px] font-semibold text-black md:text-[42px]">
-            Projects
-          </h2>
-          <p className="max-w-2xl text-sm text-black/58 md:text-base">
-            Open-source builds and applied ML systems, from research code to deployable pipelines.
-          </p>
-        </div>
+const notes = [
+  { category: "MULTIMODAL", color: "#f5b4a8", ink: "#a93432", icon: FiMessageSquare, copy: "Scores interview video, audio, and transcripts to turn practice sessions into actionable feedback." },
+  { category: "ANALYTICS", color: "#f6df87", ink: "#916806", icon: FiBarChart2, copy: "Surfaces top-performing videos, view trends, and breakout content for YouTube competitor research." },
+  { category: "SENSING", color: "#a7d5bc", ink: "#226849", icon: FiRadio, copy: "Aligns multi-dataset IMU streams and explains fusion quality, drift, and confidence." },
+  { category: "ON-DEVICE", color: "#f5b4a8", ink: "#a93432", icon: FiSmartphone, copy: "Learns phone-sensed routines to power context-aware notification decisions on Android." },
+  { category: "FINE-TUNING", color: "#acd3ed", ink: "#236b9d", icon: FiCode, copy: "A reproducible LoRA / QLoRA lab for text style transfer, with comparable training runs and evaluations." },
+  { category: "TRANSFORMERS", color: "#a7d5bc", ink: "#226849", icon: FiGitBranch, copy: "A decoder-only GPT built in PyTorch to explore attention, training, and generalization from scratch." },
+];
+
+function ProjectNote({ index }: { index: number }) {
+  const project = PROJECTS[index];
+  const note = notes[index];
+  const Icon = note.icon;
+  const repository = project.link.startsWith("https://github.com/");
+  return <article className={`lab-note lab-note-${index}`} style={{ "--note-color": note.color, "--note-ink": note.ink } as CSSProperties}>
+    <span className="lab-note-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+    <div className="lab-note-content">
+    <div className="lab-note-meta"><span><Icon aria-hidden="true" />{note.category}</span></div>
+    <h3>{project.title}</h3>
+    <div className="lab-note-body"><p>{note.copy}</p></div>
+    <ul className="lab-note-tags" aria-label="Technologies">{project.tags.map(tag=><li key={tag}>{tag}</li>)}</ul>
+    </div>
+    <a className="lab-note-link" href={project.link} target="_blank" rel="noreferrer noopener" aria-label={`${repository ? "View repository" : "Open live project"}: ${project.title} (opens in new tab)`}>
+      {repository ? <FiGithub aria-hidden="true" /> : <FiExternalLink aria-hidden="true" />}
+      {repository ? "View on GitHub" : "View live project"}<FiArrowRight aria-hidden="true" />
+    </a>
+  </article>;
+}
+
+export const Projects = () => (
+  <section id="projects" className="lab-section neo-grid" aria-labelledby="lab-heading">
+    <div className="lab-inner">
+      <header className="lab-heading">
+        <span className="lab-eyebrow">CODE & EXPERIMENTS</span>
+        <h2 id="lab-heading">GitHub Projects</h2>
+        <p>A closer look at how I build: multimodal models, sensing pipelines, and LLM experiments.</p>
+      </header>
+      <div className="lab-board">
+        {PROJECTS.map((project,index)=><ProjectNote key={project.title} index={index}/>) }
       </div>
-
-      <div className="relative z-10 overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-[0_20px_60px_rgba(0,0,0,0.04)] w-full max-w-[1160px]">
-        {PROJECTS.map((project, index) => (
-          <Link
-            key={project.title}
-            href={project.link}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="group flex items-center gap-4 border-b border-black/8 px-5 py-4 transition last:border-b-0 hover:bg-[#fbfaf7] md:px-6 md:py-5"
-          >
-            <span className="shrink-0 text-sm tabular-nums text-black/30">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-
-            <div className="min-w-0 flex-1">
-              <h3 className="text-base font-semibold leading-snug text-black md:text-lg">
-                {project.title}
-              </h3>
-              <div className="mt-1 flex flex-wrap gap-1.5">
-                {project.tags.slice(0, 4).map((tag) => (
-                  <span
-                    key={`${tag}-${project.title}`}
-                    className="rounded-full border border-black/10 bg-[#fbfaf7] px-2 py-0.5 text-[11px] text-black/55"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <FiArrowUpRight className="h-4 w-4 shrink-0 text-black/30 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black/60" />
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);

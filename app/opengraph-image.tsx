@@ -14,8 +14,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "center",
-          background: "#111111",
-          color: "#f4efe6",
+          background: "#f7f0d5",
+          color: "#171714",
           padding: "80px",
         }}
       >
@@ -27,7 +27,7 @@ export default function OpengraphImage() {
             opacity: 0.6,
           }}
         >
-          AI Engineer · AI Researcher
+          Applied AI Engineer
         </div>
         <div style={{ fontSize: 104, fontWeight: 700, marginTop: 24 }}>
           Aditya Sneh
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          Production AI systems, from research paper to deployed product.
+          I build useful AI products for real problems.
         </div>
       </div>
     ),
